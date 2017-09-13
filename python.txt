@@ -1,0 +1,36 @@
+auto_mpg = pd.read_csv("https://archive.ics.uci.edu/ml/machine-learning-databases/auto-mpg/auto-mpg.data")
+auto_mpg.head()
+
+Garage = pd.read_csv("https://archive.ics.uci.edu/ml/machine-learning-databases/auto-mpg/auto-mpg.data")
+Garage.sample(10)   
+
+
+house = pd.read_csv("https://raw.githubusercontent.com/abulbasar/data/master/kaggle-houseprice/train.csv ")
+house.sample(10)
+plt.hist(house["SalePrice"], bins = 20)
+plt.title("Histogram plot of Saleprice")
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from matplotlib.mlab import normpdf
+
+%matplotlib inline
+plt.figure(figsize = (10, 6))
+plt.subplot(3, 1, 1)
+
+plt.hist(house["SalePrice"], bins = 10)
+plt.title("Histogram plot of Saleprice")
+
+
+plt.subplot(3, 1, 2)
+plt.boxplot(house["YrSold"], vert=False)
+plt.title("Boxplot of Year Sold")
+
+
+plt.subplot(3, 1, 3)
+plt.scatter(house["LotFrontage"], house ["LotArea"])
+plt.xlabel("LotFrontage")
+plt.ylabel("LotArea")
+plt.title("LotFrontage vs LotArea")
